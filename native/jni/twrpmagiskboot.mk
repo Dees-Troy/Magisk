@@ -11,8 +11,9 @@ LIBUTILS := $(LOCAL_PATH)/utils/include
 # magiskboot
 include $(CLEAR_VARS)
 LOCAL_MODULE := magiskboottwrp
-LOCAL_STATIC_LIBRARIES := libmincrypt liblzmamb liblz4mb libbz2 libfdt libmagiskutils
+LOCAL_STATIC_LIBRARIES := libmincrypttwrp liblzmamb liblz4mb libbz2 libfdtmb libmagiskutils
 LOCAL_SHARED_LIBRARIES := libz
+LOCAL_CFLAGS += -Wno-sign-compare -Wno-null-conversion -Wno-sometimes-uninitialized
 LOCAL_C_INCLUDES := \
 	$(LOCAL_PATH)/include \
 	$(EXT_PATH)/include \
@@ -38,3 +39,4 @@ include $(BUILD_EXECUTABLE)
 
 include $(LOCAL_PATH)/external/twrp.mk
 include $(LOCAL_PATH)/../utils/twrp.mk
+include bootable/recovery/libmincrypt/Android.mk

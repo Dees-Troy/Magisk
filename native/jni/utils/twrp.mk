@@ -2,6 +2,7 @@ LOCAL_PATH := $(call my-dir)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE:= libmagiskutils
+LOCAL_CFLAGS += -Wno-sign-compare -Wno-unused-parameter -Wno-unused-function
 LOCAL_C_INCLUDES := $(LOCAL_PATH)/../include $(LIBUTILS)
 LOCAL_SRC_FILES := \
 	new.cpp \

@@ -3,6 +3,7 @@ LOCAL_PATH := $(call my-dir)
 # libbz2.a
 include $(CLEAR_VARS)
 LOCAL_MODULE := libbz2
+LOCAL_CFLAGS += -Wno-unused-parameter
 LOCAL_C_INCLUDES += $(LIBBZ2)
 LOCAL_SRC_FILES := \
 	bzip2/blocksort.c  \
@@ -16,7 +17,8 @@ include $(BUILD_STATIC_LIBRARY)
 
 # libfdt.a
 include $(CLEAR_VARS)
-LOCAL_MODULE:= libfdt
+LOCAL_MODULE:= libfdtmb
+LOCAL_CFLAGS += -Wno-sign-compare
 LOCAL_C_INCLUDES := $(LIBFDT)
 LOCAL_SRC_FILES := \
 	dtc/libfdt/fdt.c \
